@@ -25,7 +25,8 @@ and literature:
   used in China) that have a entirely numeric labels, so supporting
   this is actually important. This puts hostnames in a shaky situation
   where `300.bar` is a hostname but `300` is not. But hey, try `nslookup`.
-  It seems to agree with this.
+  It seems to agree with this. Nevermind. I've changed my interpretation
+  of this. All numeric hostnames are probably alright.
 
 It may be worthwhile to consider a light form a subtyping with phantom
 types (it's not technically subtyping, but I don't know the correct name
