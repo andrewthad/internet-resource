@@ -10,6 +10,8 @@ module Internet.Host
     -- * Decoding
   , lenientDecodeString
   , decodeUtf8
+    -- * Encoding
+  , encodeUtf8
     -- * Special hosts
   , root
   ) where
@@ -39,6 +41,9 @@ instance IsString Hostname where
 instance Show Hostname where
   showsPrec _ (Hostname h) =
     showChar '"' . showHostBytes h . showChar '"'
+
+encodeUtf8 :: Hostname -> Bytes
+encodeUtf8 (Hostname x) = x
 
 -- Fortunately, we do not have to worry about quotes or
 -- backslashes showing up in here.
