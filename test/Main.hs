@@ -87,6 +87,8 @@ main = defaultMain $ testGroup "tests"
           H.decodeUtf8 (str "") @?= Just H.root
       , testCase "M" $
           H.decodeUtf8 (str "o.EXAMPLE.COM") @?= Just "o.example.com"
+      , testCase "N" $
+          H.decodeUtf8 (str "192.0.2.29") @?= Just "192.0.2.29"
       ]
     ]
   ]
